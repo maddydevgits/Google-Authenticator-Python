@@ -53,11 +53,11 @@ def listofaps():
     data=[]
     for i in c.find():
         dummy=[]
-        dummy.append(c['ap'])
-        dummy.append(c['department'])
-        dummy.append(c['empid'])
-        dummy.append(c['empmobile'])
-        dummy.append(c['timestamp'])
+        dummy.append(i['ap'])
+        dummy.append(i['department'])
+        dummy.append(i['empid'])
+        dummy.append(i['empmobile'])
+        dummy.append(i['timestamp'])
         data.append(dummy)
     return render_template('listofaps.html',dashboard_data=data,len=len(data))
 
