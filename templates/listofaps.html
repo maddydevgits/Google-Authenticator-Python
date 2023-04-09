@@ -15,28 +15,41 @@
       <a class="navbar-brand" href="#">WIRELESS ACCESS POINTS PROTECTION FOR STORAGE</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="/">Home</a></li>
-      <li class="active"><a href="/">Login</a></li>
+      <li><a href="/dashboard">Home</a></li>
+      <li><a href="/dashboard">Access Point</a></li>
+      <li class="active"><a href="/listofaps">List of AP</a></li>
+      <li><a href="/logout">Logout</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="container">
-  <h2>Login form</h2>
-    <form action="/loginotp" method="post">
-    <div class="form-group">
-      <label for="otp">Enter OTP:</label>
-      <input type="text" class="form-control" id="otp" placeholder="Enter Otp shown on Google Authenticator" name="otp">
-    </div>
-    <button type="submit" class="btn btn-default btn-login" id="login">Login Securely</button>
-    </form> <br/>
-    <span style="color:green">{{res}}</span>
-    <span style="color:red">{{err}}</span>
+  <h2>List of Access Point Details Here</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Access Point Name</th>
+        <th>Department</th>
+        <th>Employee Id</th>
+        <th>Mobile Number</th>
+      </tr>
+    </thead>
+    <tbody id="logdata">
+        {%for i in range(len)%}
+            <tr>
+                <th>{{i+1}}</th>
+                <th>{{dashboard_data[i][0]}}</th>
+                <th>{{dashboard_data[i][1]}}</th>
+                <th>{{dashboard_data[i][2]}}</th>
+                <th>{{dashboard_data[i][3]}}</th>
+            </tr>
+    </tbody>
+  </table>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/web3.min.js"></script>
 <script src="js/truffle-contract.js"></script>
-<script src="js/loginapp.js"></script>
-
+<script src="js/app.js"></script>
 </body>
 </html>

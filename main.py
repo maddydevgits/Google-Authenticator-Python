@@ -48,5 +48,22 @@ def addAccessPoint():
     c.insert_one(k)
     return render_template('dashboard.html',res='Access Point Added')
 
+@app.route('/listofaps')
+def listofaps():
+    data=[]
+    for i in c.find():
+        dummy=[]
+        dummy.append(c['ap'])
+        dummy.append(c['department'])
+        dummy.append(c['empid'])
+        dummy.append(c['empmobile'])
+        dummy.append(c['timestamp'])
+        data.append(dummy)
+    return render_template('listofaps.html',dashboard_data=data,len=len(data))
+
+@app.route('/logout')
+def logout():
+    return redirect('/')
+
 if __name__=="__main__":
     app.run(host='0.0.0.0',port=5000)
