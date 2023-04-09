@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>WIRELESS ACCESS POINTS PROTECTION FOR STORAGE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WIRELESS ACCESS POINTS PROTECTION FOR STORAGE Demo</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li class="active"><a href="login.html">Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Login form</h2>
+    <form action="/loginotp" method="post">
+    <div class="form-group">
+      <label for="otp">Enter OTP:</label>
+      <input type="text" class="form-control" id="otp" placeholder="Enter Otp shown on Google Authenticator" name="otp">
+    </div>
+    <button type="submit" class="btn btn-default btn-login" id="login">Login Securely</button>
+    </form>
+    <span style="color:green">{{res}}</span>
+    <span style="color:red">{{err}}</span>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/web3.min.js"></script>
+<script src="js/truffle-contract.js"></script>
+<script src="js/loginapp.js"></script>
+
+</body>
+</html>
