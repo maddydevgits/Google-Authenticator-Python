@@ -28,7 +28,7 @@ def loginotp():
     otp=request.form['otp']
     state=totp.verify(int(otp))
     if state==True:
-        return render_template('index.html',res='otp valid')
+        return redirect('/dashboard')
     else:
         return render_template('index.html',err='Invalid Otp')
 
